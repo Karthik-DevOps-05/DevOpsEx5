@@ -19,6 +19,7 @@ podTemplate(containers: [
                     }
                 stage("Code coverage") {
                     sh '''
+                    cd Chapter08/sample1
                     ./gradlew jacocoTestCoverageVerification
                     ./gradlew jacocoTestReport
                     '''
@@ -31,9 +32,10 @@ podTemplate(containers: [
                 stage("jacoco checkstyle") {
                     try {
                     sh '''
-                            ./gradlew checkstyleMain
-                            ./gradlew jacocoTestReport
-                            '''
+                    cd Chapter08/sample1
+                    ./gradlew checkstyleMain
+                    ./gradlew jacocoTestReport
+                    '''
                     } 
                     catch (err) {
                     echo "checkstyle failed"
