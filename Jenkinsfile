@@ -19,8 +19,6 @@ podTemplate(containers: [
                     }
                 stage("Code coverage") {
                     sh '''
-                    pwd
-                    cd Chapter08/sample1
                     ./gradlew jacocoTestCoverageVerification
                     ./gradlew jacocoTestReport
                     '''
@@ -33,8 +31,6 @@ podTemplate(containers: [
                 stage("jacoco checkstyle") {
                     try {
                     sh '''
-                            pwd
-                            cd Chapter08/sample1
                             ./gradlew checkstyleMain
                             ./gradlew jacocoTestReport
                             '''
