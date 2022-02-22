@@ -21,7 +21,7 @@ stage('Check Style') {
 sh '''
 cd Chapter08/sample1
 chmod +x gradlew
-./gradlew checkstyle
+./gradlew checkstyleMain
 '''
 }
 stage("Code coverage") {
