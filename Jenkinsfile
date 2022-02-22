@@ -2,7 +2,7 @@ podTemplate(containers: [
 containerTemplate(
 name: 'gradle',
 image: 'gradle:6.3-jdk14',
-command: 'cat',
+command: 'sleep',
 args: '30d'
 ),
 ]) {
