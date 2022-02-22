@@ -17,6 +17,13 @@ chmod +x gradlew
 ./gradlew test
 '''
 }
+stage('Check Style') {
+sh '''
+cd Chapter08/sample1
+chmod +x gradlew
+./gradlew checkstyle
+'''
+}
 stage("Code coverage") {
 try {
 sh '''
