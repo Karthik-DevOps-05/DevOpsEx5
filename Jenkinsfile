@@ -35,6 +35,11 @@ cd Chapter08/sample1
 } catch (Exception E) {
 echo 'Failure detected'
 }
+publishHTML (target: [
+reportDir: 'Chapter08/sample1/build/reports/checkstyle',
+reportFiles: 'main.html',
+reportName: "CheckStyle Report"
+])
 }
 }
 }
